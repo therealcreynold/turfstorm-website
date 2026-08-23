@@ -1,0 +1,62 @@
+/* Turfstorm marketing site.
+   Same broadcast-telestrator language as the app: turf ground, chalk type, the first-down
+   line as the single accent. Square corners, no gradients, no rounded cards. */
+:root{
+  --turf:#0d1511; --turf-2:#131c17; --panel:#18221c; --edge:#26332b;
+  --chalk:#eef2ec; --muted:#9aa89f;
+  --marker:#f0be3c; --scrimmage:#7fa9e8;
+  --measure:34rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--turf);color:var(--chalk);
+  font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+a{color:var(--scrimmage)}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+header.bar{
+  border-bottom:1px solid var(--edge);background:var(--turf-2);
+  position:sticky;top:0;z-index:10;
+}
+header.bar .wrap{display:flex;align-items:center;gap:1rem;height:3.5rem}
+.brand{font-weight:800;letter-spacing:-.01em;font-size:1.05rem;text-decoration:none;color:var(--chalk)}
+.brand span{color:var(--marker)}
+nav{margin-left:auto;display:flex;gap:1.25rem;font-size:.9rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--chalk)}
+
+.hero{padding:4.5rem 0 3.5rem;border-bottom:1px solid var(--edge);position:relative;overflow:hidden}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--marker);
+}
+.hero h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;margin:0 0 1rem;max-width:16ch;letter-spacing:-.025em}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:var(--measure);margin:0 0 1.75rem}
+.eyebrow{
+  font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--marker);margin:0 0 1rem
+}
+.pill{
+  display:inline-block;border:1px solid var(--edge);padding:.5rem .9rem;
+  font-size:.82rem;color:var(--muted)
+}
+
+section{padding:3.25rem 0;border-bottom:1px solid var(--edge)}
+h2{font-size:1.5rem;letter-spacing:-.015em;margin:0 0 1.25rem}
+h3{font-size:1.05rem;margin:0 0 .4rem}
+p,li{max-width:var(--measure)}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1px;background:var(--edge);border:1px solid var(--edge)}
+.feature{background:var(--panel);padding:1.35rem}
+.feature p{color:var(--muted);font-size:.94rem;margin:0}
+.feature h3{color:var(--chalk)}
+
+.legal h2{margin-top:2rem}
+.legal h2:first-child{margin-top:0}
+.legal p,.legal li{color:#c8d2c9}
+.updated{font:600 .72rem/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+footer{padding:2.5rem 0 4rem;color:var(--muted);font-size:.85rem}
+footer p{max-width:48rem}
+.disclaimer{border-left:2px solid var(--edge);padding-left:1rem;margin-top:1.5rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+:focus-visible{outline:2px solid var(--marker);outline-offset:2px}

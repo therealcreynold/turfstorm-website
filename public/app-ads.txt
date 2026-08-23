@@ -1,0 +1,6 @@
+# app-ads.txt for turfstorm.com
+#
+# Deliberately empty of seller lines. Turfstorm ships no advertising SDK today, and a wrong
+# line here is worse than a missing file: it authorises a seller we do not use. Lines get
+# added at M6, generated from each network's own approved dashboard, never copied from
+# documentation examples.
