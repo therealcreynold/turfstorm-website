@@ -9,7 +9,7 @@ Served from the repo root. No build step, no dependencies, no JavaScript.
 | `index.html` | Landing page |
 | `privacy.html` | Required by App Store Connect before an app can be submitted |
 | `support.html` | Also required, and the support URL on the product page |
-| `app-ads.txt` | Must sit at the domain root. Intentionally empty of seller lines until real ad network dashboards exist; a wrong line authorises a seller we do not use |
+| `app-ads.txt` | Must sit at the domain root. Holds `OWNERDOMAIN=turfstorm.com` and Google's real DIRECT line, copied from the AdMob dashboard rather than typed. AdMob is the only network in the build, so it is the only line here; a wrong line authorises a seller we do not use |
 | `style.css` | Shared styles, matching the app's broadcast-telestrator direction |
 | `CNAME` | Custom domain for GitHub Pages |
 
@@ -29,7 +29,12 @@ DNS at Namecheap must point turfstorm.com here:
 | CNAME | www | therealcreynold.github.io. |
 
 `app-ads.txt` must be reachable at exactly `https://turfstorm.com/app-ads.txt`, not under a
-subdirectory. Verify after DNS propagates.
+subdirectory, as `text/plain`, HTTP 200, with no redirect. Verify after DNS propagates.
+
+Google's crawl walks from the App Store listing's marketing URL to this domain, so it cannot
+succeed until the listing is live. Expect the store link to appear, then the crawl, then
+Google's app readiness review: a week or more of barely filling after launch is the system
+working rather than a fault.
 
 ## Rules for this repo
 
